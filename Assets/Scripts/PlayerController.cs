@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movementSpeed;
-    public float rotationSpeed;
+    public Vector3 playerspeed;
+    private float movementspeed=0.2f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,11 @@ public class PlayerController : MonoBehaviour
        
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, rotationSpeed, 0);
+            transform.position += new Vector3(movementspeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, -rotationSpeed, 0);
+            transform.position -= new Vector3(movementspeed, 0, 0);
         }
     }
 }
