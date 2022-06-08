@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     private float movementspeed=0.2f;
     public float jumpForce;
     Rigidbody rb;
+    float multiplicadorEscala;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        multiplicadorEscala = -1;
 
     }
 
@@ -31,6 +33,11 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
             saltar();
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.localScale += new Vector3(0, 0.5f, 0) * multiplicadorEscala;
+            multiplicadorEscala *= -1;
+        }
 
     }
     private void saltar()

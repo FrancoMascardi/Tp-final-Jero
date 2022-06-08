@@ -7,7 +7,7 @@ public class Obstaculo : MonoBehaviour
     // Start is called before the first frame update
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag=="Object")
+        if (col.gameObject.tag== "Obstaculo_Cubo (1)")
         {
             Destroy(col.gameObject);
         }
@@ -27,12 +27,21 @@ public class Obstaculo : MonoBehaviour
     }
     private void loop()
     {
-
-        transform.position += (transform.forward * velocidad * Time.deltaTime);
-        if (transform.position.y < -30)
+        transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+        if (transform.position.z < -30)
         {
-            transform.Translate(Vector3.right * 1 * Time.deltaTime);
+            transform.Translate(Vector3.back * 60);
         }
+        if (transform.position.y < 0.3)
+        {
+            transform.Translate(Vector3.up * 2);
+        }
+
+        // transform.position += (transform.forward * velocidad * Time.deltaTime);
+        //if (transform.position.z < -30)
+        //{
+        //  transform.Translate(Vector3.right * 60);
+        //}
 
     }
 
