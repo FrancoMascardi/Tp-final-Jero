@@ -21,7 +21,9 @@ public class Colission : MonoBehaviour
             Destroy(gameObject);
         if (col.gameObject.name == "Obstaculo_Esfera")
             Destroy(gameObject);
-       
-      
+        if (col.gameObject.name == "Prefab")
+            Destroy(gameObject);
+
+
     }
 }
