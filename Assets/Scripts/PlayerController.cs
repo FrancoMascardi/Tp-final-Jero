@@ -10,10 +10,14 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     float multiplicadorEscala;
 
+    public int maxJumps;
+    int hasJump;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        hasJump = maxJumps;
         rb = GetComponent<Rigidbody>();
         multiplicadorEscala = -1;
 
@@ -31,19 +35,27 @@ public class PlayerController : MonoBehaviour
         {
             transform.position -= new Vector3(movementspeed, 0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-            saltar();
+     
         if (Input.GetKeyDown(KeyCode.S))
         {
             transform.localScale += new Vector3(0, 0.5f, 0) * multiplicadorEscala;
             multiplicadorEscala *= -1;
         }
+      
+        if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            hasJump--;
+        }
 
     }
-    private void saltar()
+    void OnCollisionEnter(Collision col)
     {
-        rb.velocity = Vector3.zero;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        if (col.gameObject.tag == "Pista")
+        {
+            hasJump = maxJumps;
+        }
     }
+   
 }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - Obstaculo_Cubo (1)
+  - Pista
   layers:
   - Default
   - TransparentFX

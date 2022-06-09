@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstaculo : MonoBehaviour
+public class CuboGravedad : MonoBehaviour
 {
-    // Start is called before the first frame update
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag== "Obstaculo_Cubo")
+        if (col.gameObject.tag == "Obstaculo_Cubo")
         {
             Destroy(col.gameObject);
         }
@@ -44,7 +43,4 @@ public class Obstaculo : MonoBehaviour
         //}
 
     }
-
-     //Update is called once per frame
-  
 }
