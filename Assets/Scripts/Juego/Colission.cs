@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Colission : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -18,11 +19,25 @@ public class Colission : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "Obstaculo_Cubo")
+        {
             Destroy(gameObject);
+
+            SceneManager.LoadScene("Win");
+        }
         if (col.gameObject.name == "Obstaculo_Esfera")
+        {
             Destroy(gameObject);
-        if (col.gameObject.name == "Prefab")
+            SceneManager.LoadScene("Win");
+        }
+        if (col.gameObject.name == "Prefab(clone)")
+        {
             Destroy(gameObject);
+            SceneManager.LoadScene("Win");
+        }
+
+
+
+
 
 
     }

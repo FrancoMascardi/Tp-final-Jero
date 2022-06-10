@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 playerspeed;
     private float movementspeed=0.2f;
     public float jumpForce;
+    public float altura;
     Rigidbody rb;
     float multiplicadorEscala;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         hasJump = maxJumps;
         rb = GetComponent<Rigidbody>();
-        multiplicadorEscala = -1;
+        multiplicadorEscala = -1    ;
 
     }
 
@@ -35,13 +36,13 @@ public class PlayerController : MonoBehaviour
         {
             transform.position -= new Vector3(movementspeed, 0, 0);
         }
-     
+
         if (Input.GetKeyDown(KeyCode.S))
         {
             transform.localScale += new Vector3(0, 0.5f, 0) * multiplicadorEscala;
             multiplicadorEscala *= -1;
         }
-      
+
         if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -54,6 +55,18 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Pista")
         {
             hasJump = maxJumps;
+        }
+        if (col.gameObject.name == "Obstaculo_Cubo")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.name == "Obstaculo_Esfera")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.name == "Prefab(Clone)")
+        {
+            Destroy(gameObject);
         }
     }
    
