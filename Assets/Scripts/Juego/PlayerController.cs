@@ -37,12 +37,6 @@ public class PlayerController : MonoBehaviour
             transform.position -= new Vector3(movementspeed, 0, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            transform.localScale += new Vector3(0, 0.5f, 0) * multiplicadorEscala;
-            multiplicadorEscala *= -1;
-        }
-
         if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -64,10 +58,24 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         if (col.gameObject.name == "Prefab(Clone)")
         {
             Destroy(gameObject);
         }
+        if (col.gameObject.name == "Obstaculo_Esfera (1)")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.name == "Obstaculo_Esfera (2)")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.name == "Obstaculo_Esfera (3)")
+        {
+            Destroy(gameObject);
+        }
+
     }
    
 }

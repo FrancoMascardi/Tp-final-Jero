@@ -22,17 +22,17 @@ public class Colission : MonoBehaviour
         {
             Destroy(gameObject);
 
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Lost");
         }
         if (col.gameObject.name == "Obstaculo_Esfera")
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Lost");
         }
         if (col.gameObject.name == "Prefab(clone)")
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Lost");
         }
 
 
