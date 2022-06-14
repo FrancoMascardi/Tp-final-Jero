@@ -24,7 +24,34 @@ public class Colission : MonoBehaviour
 
             SceneManager.LoadScene("Lost");
         }
+        if (col.gameObject.name == "Obstaculo_Cubo(1)")
+        {
+            Destroy(gameObject);
+
+            SceneManager.LoadScene("Lost");
+        }
+        if (col.gameObject.name == "Obstaculo_Cubo(2)")
+        {
+            Destroy(gameObject);
+
+            SceneManager.LoadScene("Lost");
+        }
         if (col.gameObject.name == "Obstaculo_Esfera")
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("Lost");
+        }
+        if (col.gameObject.name == "Obstaculo_Esfera(1)")
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("Lost");
+        }
+        if (col.gameObject.name == "Obstaculo_Esfera(2)")
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("Lost");
+        }
+        if (col.gameObject.name == "Obstaculo_Esfera(3)")
         {
             Destroy(gameObject);
             SceneManager.LoadScene("Lost");

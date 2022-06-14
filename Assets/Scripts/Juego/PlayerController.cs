@@ -54,6 +54,14 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (col.gameObject.name == "Obstaculo_Cubo(1)")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.name == "Obstaculo_Cubo(2)")
+        {
+            Destroy(gameObject);
+        }
         if (col.gameObject.name == "Obstaculo_Esfera")
         {
             Destroy(gameObject);
